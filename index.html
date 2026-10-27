@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio with projects, project search and an AI chatbot.">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home" id="logoName">Portfolio</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">&#9776;</button>
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#chatbot">AI Chatbot</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle" class="theme-btn" type="button">Switch to Dark Mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <img id="profilePhoto" class="profile-photo" src="assets/profile.svg" alt="Profile photograph" width="180" height="180">
+        <div class="hero-text">
+          <p class="eyebrow">Hello, I am</p>
+          <h1 id="heroName">Your Name</h1>
+          <p class="tagline" id="heroTagline"></p>
+          <p id="heroIntro"></p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#projects">View My Projects</a>
+            <a class="btn btn-outline" id="heroGithub" href="#contact" target="_blank" rel="noopener">GitHub Profile</a>
+            <a class="btn btn-outline" href="#chatbot">Ask My AI</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p id="aboutText"></p>
+        <h3>Education</h3>
+        <ul id="eduList" class="edu-list"></ul>
+      </div>
+    </section>
+
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h2>Skills</h2>
+        <div id="skillGroups" class="skill-groups"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>My Projects</h2>
+        <div class="search-bar">
+          <label for="projectSearch" class="visually-hidden">Search projects by name or technology</label>
+          <input id="projectSearch" type="search" placeholder="Search by name or technology (e.g. Python, Quiz, Book)" autocomplete="off">
+          <button id="clearSearch" class="btn btn-small" type="button">Clear</button>
+        </div>
+        <div id="filterChips" class="chips" aria-label="Filter by technology"></div>
+        <p id="resultCount" class="result-count" aria-live="polite"></p>
+        <div id="projectGrid" class="project-grid"></div>
+        <p id="noResults" class="no-results" hidden>No projects match your search. Try another word like "Python" or "Quiz".</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2>Contact Information</h2>
+        <ul id="contactList" class="contact-list"></ul>
+      </div>
+    </section>
+
+    <section id="chatbot" class="section">
+      <div class="container">
+        <h2>AI Chatbot</h2>
+        <p>Ask me anything about my background, skills or projects.</p>
+        <div class="chat-box">
+          <div id="chatLog" class="chat-log" role="log" aria-live="polite">
+            <div class="msg bot">Hi! I am the portfolio assistant. Ask me about my skills, projects or how to reach me.</div>
+          </div>
+          <div id="chatSuggestions" class="chips chat-suggestions"></div>
+          <form id="chatForm" class="chat-form" autocomplete="off">
+            <label for="chatInput" class="visually-hidden">Type your question</label>
+            <input id="chatInput" type="text" maxlength="500" placeholder="Type your question..." required>
+            <button id="chatSend" class="btn btn-gold" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> <span id="footerName"></span>. Built with HTML, CSS, JavaScript, Cursor AI and Vercel.</p>
+    </div>
+  </footer>
+
+  <script src="portfolio-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
